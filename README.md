@@ -7,7 +7,7 @@ To get you started you can simply clone repository and install the dependencies:
 
 ### Clone project
 
-Clone  repository using [git][git]:
+Clone  repository using [git]:
 
 ```
 git clone https://github.com/OksanaKovalchuk/pokemon.git
