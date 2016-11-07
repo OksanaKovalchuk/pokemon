@@ -1,0 +1,104 @@
+<div class="container">
+    <h1 class="thumbnail text-center">Pokedex</h1>
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                Choose pokemons by exact type:
+                <select name="" id="filtering" ng-model="filterType" class="form-control">
+                    <option value="all">All</option>
+                    <option value="{{type.resource_uri}}" ng-repeat="type in types" >
+                        {{type.name}}
+                    </option>
+                </select>
+                <br>
+                <div class="row">
+                    <div ng-repeat="pok in list" class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-show="pok.show">
+                        <div class=" thumbnail add-padding">
+                            <div ng-click="load(pok.resource_uri);" class="pointer"
+                            title="Click to see more detailed info about {{pok.name}}">
+                                <img ng-src="http://pokeapi.co/media/img/{{pok.pkdx_id}}.png"
+                                     alt="{{pok.name}} picture" class="image-pokemon-sizing center-block">
+                               <span class="central">
+                                    {{pok.name}}
+                               </span>
+                        </div>
+                        <br>
+                        <span ng-repeat="type in pok.types" class="padding-btns">
+                                <button class="btn btn-md" ng-class="getClass(type.name)">
+                                {{type.name}}
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+        <div ng-show="showDetails">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 thumbnail">
+                <div>
+                    <img ng-src="http://pokeapi.co/media/img/{{pockemon.pkdx_id}}.png" alt="" class="thumbnail center-block"/>
+                        <table class="table-bordered table-hover table-condensed col-lg-12 col-md-12 col-xs-12">
+                            <br>
+                            <caption class="text-center"><h3 class="bg">
+                                {{pockemon.name}} #0{{pockemon.national_id}}</h3></caption>
+                            <br>
+                            <tbody>
+                            <tr>
+                                <td>Type</td>
+                                    <td>
+                                        <span ng-repeat="type in pockemon.types">
+                                            <span ng-if="$index!=0">,</span>{{type.name}}
+                                        </span>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>Attack</td>
+                                <td>{{pockemon.attack}}</td>
+                            </tr>
+                            <tr>
+                                <td>Defense</td>
+                                <td>{{pockemon.defense}}</td>
+                            </tr>
+                            <tr>
+                                <td>HP</td>
+                                <td>{{pockemon.hp}}</td>
+                            </tr>
+                            <tr>
+                                <td>SP Attack</td>
+                                <td>{{pockemon.sp_atk}}</td>
+                            </tr>
+                            <tr>
+                                <td>SP Defense</td>
+                                <td>{{pockemon.sp_def}}</td>
+                            </tr>
+                            <tr>
+                                <td>Speed</td>
+                                <td>{{pockemon.speed}}</td>
+                            </tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td>{{pockemon.weight}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total moves</td>
+                                <td>{{totalMoves}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3" ng-if="meta.previous">
+                    <button type="button" class="btn btn-gray btn-md btn-block" ng-click="previous()">Previous</button>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9" ng-if="meta.next">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="next()">Load more..</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

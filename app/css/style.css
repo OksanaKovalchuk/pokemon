@@ -1,0 +1,17 @@
+.pointer{
+    cursor:pointer;
+}
+.add-padding{
+    padding: 20px;
+}
+.central{
+    alignment-adjust: central;
+}
+.image-pokemon-sizing{
+    height: 120px;
+    width: 120px;
+}
+.paddings-btns{
+    padding-left: 20px;
+    padding-top: 5px;
+}
