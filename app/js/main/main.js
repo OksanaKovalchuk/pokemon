@@ -18,6 +18,7 @@ angular.module('app.main', ['ngRoute'])
       * resolving base promise for controller
       */
      function init(){
+         $scope.showDetails = false;
          $http.get("http://pokeapi.co"+ $scope.start_api).success(function(response){
              $scope.meta = response.meta;
              $scope.list = response.objects;
