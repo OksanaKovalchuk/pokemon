@@ -24,6 +24,7 @@ run
 npm install
 ```
 and after that run
+```
 bower install bootstrap
 ```
 
