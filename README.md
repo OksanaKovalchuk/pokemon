@@ -23,10 +23,7 @@ We have preconfigured `npm` to automatically run `bower` so we can simply do:
 run
 npm install
 ```
-and after that run
-```
-bower install bootstrap
-```
+
 
 You should find that you have two new
 folders in your project.
