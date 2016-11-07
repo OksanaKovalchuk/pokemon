@@ -40,3 +40,11 @@ npm start
 ```
 
 Now browse to the app at `http://localhost:8000/`.
+
+### To see my code, visit those pages:
+```
+https://github.com/OksanaKovalchuk/pokemon/blob/master/app/js/main/main.js
+```
+```
+https://github.com/OksanaKovalchuk/pokemon/blob/master/app/js/main/main.template.html
+```
